@@ -201,7 +201,89 @@ En caso de que un cliente escriba un numero negativo va a aparecer el siguiente 
 > [!IMPORTANT] 
 > Estos son errores que se deben solucionar
 
+***
 
+## Mini reto 3
 
+### Prueba de escritorio: cotización de un recorrido guiado
 
+# Prueba de escritorio: Cotización de recorrido
 
+**Algoritmo:** `cotizacion_recorrido`  
+**Recorrido seleccionado:** 2. Sabores de barrio  
+**Cantidad de personas:** 4  
+**Precio por persona:** $60.000  
+**Porcentaje de anticipo:** 30 %
+
+## Tabla de prueba de escritorio
+
+| N.º | Instrucción ejecutada | nombre_recorrido | precio_persona | cantidad_personas | i | valor_total | valor_anticipo | saldo |
+|---:|---|---|---|---:|---:|---:|---:|---:|
+| 1 | Definir variables | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar |
+| 2 | nombre_recorrido[1] <- "1. Río y Parque" | Río y Parque | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar |
+| 3 | nombre_recorrido[2] <- "2. Sabores de barrio" | Río y Parque, Sabores de barrio | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar |
+| 4 | nombre_recorrido[3] <- "3. Reto las palmas" | Río y Parque, Sabores de barrio, Reto las palmas | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar |
+| 5 | precio_persona[1] <- 45000 | Sin cambios | 45000 | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar |
+| 6 | precio_persona[2] <- 60000 | Sin cambios | 45000, 60000 | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar |
+| 7 | precio_persona[3] <- 80000 | Sin cambios | 45000, 60000, 80000 | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar |
+| 8 | Mostrar tabla de precios | Sin cambios | Sin cambios | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar | Sin inicializar |
+| 9 | Primera iteración del ciclo Para | Sin cambios | Sin cambios | Sin inicializar | 1 | Sin inicializar | Sin inicializar | Sin inicializar |
+| 10 | Mostrar recorrido 1 y precio | Sin cambios | Sin cambios | Sin inicializar | 1 | Sin inicializar | Sin inicializar | Sin inicializar |
+| 11 | Segunda iteración del ciclo Para | Sin cambios | Sin cambios | Sin inicializar | 2 | Sin inicializar | Sin inicializar | Sin inicializar |
+| 12 | Mostrar recorrido 2 y precio | Sin cambios | Sin cambios | Sin inicializar | 2 | Sin inicializar | Sin inicializar | Sin inicializar |
+| 13 | Tercera iteración del ciclo Para | Sin cambios | Sin cambios | Sin inicializar | 3 | Sin inicializar | Sin inicializar | Sin inicializar |
+| 14 | Mostrar recorrido 3 y precio | Sin cambios | Sin cambios | Sin inicializar | 3 | Sin inicializar | Sin inicializar | Sin inicializar |
+| 15 | Leer cantidad_personas = 4 | Sin cambios | Sin cambios | 4 | 3 | Sin inicializar | Sin inicializar | Sin inicializar |
+| 16 | Leer i = 2 | Sin cambios | Sin cambios | 4 | 2 | Sin inicializar | Sin inicializar | Sin inicializar |
+| 17 | Evaluar Segun i: caso 2 | Sin cambios | Sin cambios | 4 | 2 | Sin inicializar | Sin inicializar | Sin inicializar |
+| 18 | valor_total <- precio_persona[2] * cantidad_personas | Sin cambios | Sin cambios | 4 | 2 | 240000 | Sin inicializar | Sin inicializar |
+| 19 | valor_anticipo <- redon((valor_total * 30) / 100) | Sin cambios | Sin cambios | 4 | 2 | 240000 | 72000 | Sin inicializar |
+| 20 | saldo <- valor_total - valor_anticipo | Sin cambios | Sin cambios | 4 | 2 | 240000 | 72000 | 168000 |
+| 21 | Mostrar cotización | Sin cambios | Sin cambios | 4 | 2 | 240000 | 72000 | 168000 |
+| 22 | Evaluar condición Hasta Que | Sin cambios | Sin cambios | 4 | 2 | 240000 | 72000 | 168000 |
+| 23 | Finalizar algoritmo | Sin cambios | Sin cambios | 4 | 2 | 240000 | 72000 | 168000 |
+
+## Cálculos realizados
+
+### 1. Valor total
+
+Precio por persona × cantidad de personas:
+
+60.000 × 4 = 240.000
+
+### 2. Anticipo del 30 %
+
+240.000 × 30 / 100 = 72.000
+
+### 3. Saldo pendiente
+
+240.000 - 72.000 = 168.000
+
+## Resultado final
+
+| Concepto | Valor |
+|---|---:|
+| Recorrido | Sabores de barrio |
+| Cantidad de personas | 4 |
+| Precio por persona | $60.000 |
+| Valor total | $240.000 |
+| Anticipo (30 %) | $72.000 |
+| Saldo pendiente | $168.000 |
+
+**Conclusión:** Para un grupo de 4 personas que selecciona Sabores de barrio, el valor total es de $240.000, el anticipo es de $72.000 y el saldo pendiente es de $168.000.
+
+*** 
+
+## Identificación de símbolos del diagrama
+
+Al revisar el diagrama del algoritmo [02_cotizacion_recorrido](algoritmos/02_cotizacion_recorrido.psc), se identifican los siguientes símbolos:
+
+| Símbolo | Forma en el diagrama | Instrucciones identificadas | Función |
+|---|---|---|---|
+| Inicio y fin | Terminal u óvalo | `Algoritmo cotizacion_recorrido` y `FinAlgoritmo` | Indican dónde comienza y termina el algoritmo. |
+| Entrada y salida | Paralelogramo verde | `Leer cantidad_personas`, `Leer i` y las instrucciones `Escribir` | Permiten recibir datos del usuario y mostrar la tabla de precios, los mensajes y la cotización. |
+| Proceso | Rectángulo amarillo | Definición y asignación de variables, `Dimension`, cálculo de `valor_total`, `valor_anticipo` y `saldo` | Representan las operaciones que realiza el algoritmo para preparar los datos y calcular la cotización. |
+
+En el diagrama también aparece un rombo para evaluar la condición de repetición `Hasta Que i = 1 O i = 2 O i = 3`. Este símbolo permite decidir si el algoritmo termina el ciclo o vuelve a solicitar la selección del recorrido.
+
+***
