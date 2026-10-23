@@ -165,6 +165,41 @@ Se dejaron por fuera como:
 
 ***
 
+## Mi reto 2
+
+### Automatización "Cliente que alquila una bicicleta por horas".
+
+| Entrada |Tipo de dato| Proceso | Salida |
+| :--- |:---:| :---: | ---: |
+| nombre_cliente | Caracter | Ingresa nombre Completo | Ana
+| horas_alquiler | Real | Ingresa el numero de horas que vas a alquilar | 3
+| tarifas_hora | Entero | 10.000 | 
+| valor_pagar | Real | horas_alquiler * tarifas_hora | Hola, Ana: tu alquiler de 3 horas cuesta $30000  
+
+### Tabla de pruebas
+
+Se hizo 3 pruebas para el algoritmo [01_cotizacion_basica](algoritmos/01_cotizacion_basica.psc)
+
+| Entrada | Proceso | Salida |
+| :--- |:---: | ---: |
+| "Ingresa tu nombre completo: Juan"<br>"Ingresa el numero de horas que vas a alquilar: 1" | 1 hora * $10.000 | "Hola Juan: tu alquiler de 1 horas cuesta $10.000" |
+| "Ingresa tu nombre completo: Juan"<br>"Ingresa el numero de horas que vas a alquilar: 3" | 3 horas * $10.000 | "Hola Juan: tu alquiler de 3 horas cuesta $30.000" |
+| "Ingresa tu nombre completo: Juan"<br>"Ingresa el numero de horas que vas a alquilar: 8" | 8 horas * $10.000 | "Hola Juan: tu alquiler de 8 horas cuesta $80.000" |
+
+### En caso de escribir "0"
+
+En caso de que un cliente escriba el "0" va a aparecer el siguiente mensaje: 
+
+```text
+- Hola Juan: tu alquiler de 0 horas cuesta $0
+```
+En caso de que un cliente escriba un numero negativo va a aparecer el siguiente mensaje: 
+
+```text
+- Hola Juan: tu alquiler de -2 horas cuesta $-20000
+```
+> [!IMPORTANT] 
+> Estos son errores que se deben solucionar
 
 
 
