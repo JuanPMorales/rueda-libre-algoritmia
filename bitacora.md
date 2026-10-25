@@ -287,3 +287,43 @@ Al revisar el diagrama del algoritmo [02_cotizacion_recorrido](algoritmos/02_cot
 En el diagrama también aparece un rombo para evaluar la condición de repetición `Hasta Que i = 1 O i = 2 O i = 3`. Este símbolo permite decidir si el algoritmo termina el ciclo o vuelve a solicitar la selección del recorrido.
 
 ***
+
+## Mini reto 4
+
+**Objetivo**
+
+Integrar varios cálculos secuenciales en un algoritmo completo que cotice la cuenta de un 
+grupo y la divida entre sus integrantes, verificándolo con casos de prueba.
+
+### Lista de cálculos
+
+| Paso | Cálculo | Fórmula |
+|---:|---|---|
+| 1 | Alquiler de bicicletas | `numero_bicicleta × precio_Bicicleta[1, 1] × horas_alquiler` |
+| 2 | Valor del recorrido | `cantidad_personas × precio_persona[i]` |
+| 3 | Subtotal | `alquiler_bicicleta + valor_total_recorrido` |
+| 4 | Aporte voluntario | `subtotal × 10 / 100` (si elige 1; si elige 2, es 0) |
+| 5 | Total con aporte | `subtotal + aporte_voluntario` |
+| 6 | Valor por persona | `valor_total_aporte ÷ cantidad_personas` |
+| 7 | Cobro redondeado hacia arriba | `(Trunc(valor_persona ÷ 100) + 1) × 100` |
+## Redondeo
+
+### trunc
+- Elimina la parte decimal de un número sin importar su valor, dejando únicamente la parte entera. No redondea.
+### redon
+- (Redondeo): Redondea al entero más cercano. Si la parte decimal es 0.5 o mayor, redondea hacia arriba; si es menor a 0.5, redondea hacia abajo.
+
+Utilicé `trunc` en el valor por persona redondeado porque necesitaba contar las centenas
+completas sin que la parte decimal alterara el resultado. Al sumar una centena y
+volver a multiplicar por `100`, se garantiza que el cobro sea el siguiente
+múltiplo de 100. `redon` no serviría para esa fórmula, porque aproximaría hacia
+arriba o hacia abajo según la parte decimal, en lugar de garantizar el siguiente
+múltiplo de 100.
+
+## Pruebas de [cotizacion_recorrido](algoritmos/03_cuenta_grupo.psc)
+
+| Prueba | Datos de entrada | Alquiler de bicicleta | Valor del recorrido | Subtotal | Aporte voluntario | Valor total con aporte | Valor por persona |
+|---:|---|---:|---:|---:|---:|---:|---:|
+| 1 | 3 personas, 3 bicicletas por 2 horas, Río y Parques | 60000 | 135000 por 3 personas | 195000 | 0 | 195000 | 65100 |
+| 2 | 4 personas, 3 bicicletas por 3 horas, Sabores de Barrio | 90000 | 240000 por 4 personas | 330000 | 0 | 330000 | 8260 |
+| 3 | 6 personas, 3 bicicletas por 8 horas, Sabores de Barrio con aporte voluntario | 240000 | 360000 por 6 personas | 600000 | 60000 | 660000 | 110100 |

@@ -6,14 +6,14 @@ Algoritmo cotizacion_recorrido
 	
 	
 	Dimension nombre_recorrido[3]
-	nombre_recorrido[1] <- "1. Río y Parque"
+	nombre_recorrido[1] <- "1. Rï¿½o y Parque"
 	nombre_recorrido[2] <- "2. Sabores de Barrio"
 	nombre_recorrido[3] <- "3. Reto Las Palmas"
 	
 	Dimension precio_persona[3]
-	precio_persona[1] <- 45.000
-	precio_persona[2] <- 60.000
-	precio_persona[3] <- 80.000
+	precio_persona[1] <- 45000
+	precio_persona[2] <- 60000
+	precio_persona[3] <- 80000
 	
 	
 	Escribir "=============================================="
